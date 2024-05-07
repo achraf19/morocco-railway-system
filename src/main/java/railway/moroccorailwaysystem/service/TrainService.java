@@ -58,11 +58,4 @@ public class TrainService {
                         "No train was found with ref %s".formatted(trainNumber)
                 ));
     }
-
-    public Train getTrainByTrainNbr(Integer trainNumber) {
-        return trainRepository.findTrainByTrainNumber(trainNumber)
-                .orElseThrow(() -> new ResourceNotFoundException(
-                        "No train was found with ref %s".formatted(trainNumber)
-                ));
-    }
 }
