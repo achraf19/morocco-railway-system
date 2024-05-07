@@ -24,7 +24,6 @@ public class Route {
     private String from;
     @Column(name = "arrival_station", nullable = false)
     private String to;
-    private LocalDate departureDate;
     private Time departureTime;
     private Time arrivalTime;
     @Column(columnDefinition = "JSON")
@@ -56,21 +55,19 @@ public class Route {
     public Route(
             String from,
             String to,
-            LocalDate departureDate,
             Time departureTime,
             Time arrivalTime,
-            List<String> trainStations,
-            List<String> arrivalTimes,
             BigDecimal price,
             int stops,
             int changes,
             List<String> daysOfWeek,
+            List<String> trainStations,
+            List<String> arrivalTimes,
             Train train,
             RailwayLine railwayLine
     ) {
         this.from = from;
         this.to = to;
-        this.departureDate = departureDate;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
         this.trainStations = trainStations;
